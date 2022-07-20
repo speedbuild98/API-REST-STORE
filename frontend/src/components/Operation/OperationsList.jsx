@@ -47,6 +47,7 @@ const OperationsList = () => {
                   <th> Products </th>
                   <th> Quantity </th>
                   <th> Total </th>
+                  <th> Actions </th>
                   </tr>
             </thead>
             <tbody>
@@ -62,7 +63,7 @@ const OperationsList = () => {
                               <td> {operation.quantity} </td>
                               <td> {operation.total} </td>
                               <td>
-                                    <Link className="btn btn-info" to={`/edit-operation/${operation.id}`} >Update</Link>
+                                    <Link className="btn btn-info text-white" to={`/edit-operation/${operation.id}`} >Update</Link>
                                     <button className = "btn btn-danger" onClick = {() => deleteOperation(operation.id)}
                                     style = {{marginLeft:"10px"}}> Delete</button>
                               </td>

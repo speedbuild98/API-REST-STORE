@@ -6,8 +6,8 @@ const AddOperation = () => {
     
 
       const [date, setDate] = useState('')
-      const [first_name_customer, setFirstNameOperation] = useState('')
-      const [last_name_customer, setLastNameOperation] = useState('')
+      const [firstNameCustomer, setFirstNameOperation] = useState('')
+      const [lastNameCustomer, setLastNameOperation] = useState('')
       const [products, setProducts] = useState('')
       const [quantity, setQuantity] = useState('')
       const [total, setTotal] = useState('')
@@ -17,7 +17,7 @@ const AddOperation = () => {
       const saveOrUpdateOperation = (e) => {
           e.preventDefault();
   
-          const operation = {date, first_name_customer, last_name_customer, products, quantity, total}
+          const operation = {date, firstNameCustomer, lastNameCustomer, products, quantity, total}
   
           if(id){
               OperationService.updateOperation(id, operation).then((response) => {
@@ -43,15 +43,16 @@ const AddOperation = () => {
       useEffect(() => {
   
           OperationService.getOperationById(id).then((response) =>{
-                setDate(response.data.firstName)
-                setFirstNameOperation(response.data.lastname)
-                setLastNameOperation(response.data.email)
-                setProducts(response.data.firstName)
-                setQuantity(response.data.lastname)
-                setTotal(response.data.email)
+                setDate(response.data.date)
+                setFirstNameOperation(response.data.firstNameCustomer)
+                setLastNameOperation(response.data.lastNameCustomer)
+                setProducts(response.data.product)
+                setQuantity(response.data.quantity)
+                setTotal(response.data.total)
           }).catch(error => {
               console.log(error)
           })
+          // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [])
   
       const title = () => {
@@ -96,7 +97,7 @@ const AddOperation = () => {
                         placeholder="Enter customer first name"
                         name="first_name_customer"
                         className="form-control"
-                        value={first_name_customer}
+                        value={firstNameCustomer}
                         onChange={(e) => setFirstNameOperation(e.target.value)}
                       ></input>
                     </div>
@@ -105,10 +106,10 @@ const AddOperation = () => {
                       <label className="form-label"> Costumer last name:</label>
                       <input
                         type="text"
-                        placeholder="Enter email Id"
+                        placeholder="Enter customer last name"
                         name="last_name_customer"
                         className="form-control"
-                        value={last_name_customer}
+                        value={lastNameCustomer}
                         onChange={(e) => setLastNameOperation(e.target.value)}
                       ></input>
                     </div>
@@ -144,13 +145,13 @@ const AddOperation = () => {
                         placeholder="Enter total"
                         name="quantity"
                         className="form-control"
-                        value={quantity}
+                        value={total}
                         onChange={(e) => setTotal(e.target.value)}
                       ></input>
                     </div>
 
                     <button className = "btn btn-success" onClick = {(e) => saveOrUpdateOperation(e)} >Submit </button>
-                    <Link to="/operations" className="btn btn-danger"> Cancel </Link>
+                    <Link to="/operations" className="btn btn-danger text-white"> Cancel </Link>
                   </form>
                 </div>
               </div>

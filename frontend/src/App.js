@@ -30,7 +30,7 @@ function App() {
 
               <Route path = "/operations" component = {OperationsList}></Route>
               <Route path = "/add-operation" component = {AddOperation} ></Route>
-              <Route path = "/edit-operation/:id" component = {AddProduct}></Route>
+              <Route path = "/edit-operation/:id" component = {AddOperation}></Route>
             </Switch>
         </div>
         <Footer />
