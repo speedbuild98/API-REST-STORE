@@ -13,6 +13,10 @@ Mi primera API REST CRUD coded en Java con el framework Spring y MySQL como data
 - [ ] ID entities issues (ID 4, ID 14, ID 24, etc.)
 - [ ] Customer name and last name connected on AddOperation selection
 - [ ] Product price and name connected on AddOperation selection
+- [ ] Dashbord with Barcharts (Chart.js)
+- [ ] Dashbord with stats
+- [ ] Login Auth0
+- [ ] Databases for different users
 
 
 
