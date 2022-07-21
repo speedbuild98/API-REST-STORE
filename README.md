@@ -9,10 +9,10 @@ Mi primera API REST CRUD coded en Java con el framework Spring y MySQL como data
 - [X] Deploy on Heroku
 - [X] Basic Front-End with React.js
 - [X] Front-End connected with API
-- [] {operation.value} = {product.price} * {operation.quantity}
-- [] ID entities issues (ID 4, ID 14, ID 24, etc.)
-- [] Customer name and last name connected on AddOperation selection
-- [] Product price and name connected on AddOperation selection
+- [ ] {operation.value} = {product.price} * {operation.quantity}
+- [ ] ID entities issues (ID 4, ID 14, ID 24, etc.)
+- [ ] Customer name and last name connected on AddOperation selection
+- [ ] Product price and name connected on AddOperation selection
 
 
 
