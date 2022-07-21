@@ -6,7 +6,7 @@ import AddProduct from "./components/Product/AddProduct"
 import OperationsList from "./components/Operation/OperationsList"
 import AddOperation from "./components/Operation/AddOperation"
 import Header from './components/Header'
-import Footer from "./components/Footer";
+import Dashboard from "./components/Dashboard"
 
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -18,7 +18,7 @@ function App() {
         <Header />
         <div className= "container">
           <Switch>
-              <Route exact path = "/" component = {CustomersList}></Route>
+              <Route exact path = "/" component = {Dashboard}></Route>
 
               <Route path = "/customers" component = {CustomersList}></Route>
               <Route path = "/add-customer" component = {AddCustomer} ></Route>
@@ -33,7 +33,6 @@ function App() {
               <Route path = "/edit-operation/:id" component = {AddOperation}></Route>
             </Switch>
         </div>
-        <Footer />
         </Router>
     </div>
   );

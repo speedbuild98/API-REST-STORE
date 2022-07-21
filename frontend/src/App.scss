@@ -11,9 +11,9 @@ body{
     font-family: $font-family;
     font-weight: 400;
     line-height: 1.5;
-    cursor: url("./assets/cursor.png"), default;
-    cursor: url("./assets/cursor.png"), auto;
-    overflow-x: hidden;
+    //cursor: url("./assets/cursor.png"), default;
+    //cursor: url("./assets/cursor.png"), auto;
+    //cursor: url("./assets/cursor.png"), pointer;
 
 
     background-color: #F9FAFB;
@@ -47,6 +47,7 @@ iframe{
 .container{
     max-width: 1660px;
     margin: auto;
+    margin-top: 100px;
 }
 
 //========HEADER========\\
@@ -58,9 +59,18 @@ iframe{
     padding: $basic;
     height: 80px;
     z-index: 10;
-    box-shadow: $box-shadow;
     position: fixed;
     width: 100%;
+    top: 0;
+    transition: all .5s ease-in-out;
+  
+    &--open{
+      border-bottom: 5px solid $red;
+    }
+    
+    &--closed{
+      border-bottom: 5px solid $blue;
+    }
 
     &-img{
       width: 200px;
@@ -89,11 +99,11 @@ iframe{
     position: absolute;
     right: 0;
     transition: all .3s ease-in;
-    border-radius: 0 20px 20px 0;
-    padding-top: 85px;
+    top: 0;
+    padding-top: 90px;
 
     &__content{
-      @include flex (left, space-around,column);
+      @include flex (center, space-around,column);
 
       &--hidden{
         display: none;
@@ -104,23 +114,49 @@ iframe{
       }
 
       &-title{
+        color: $white;
         font-weight: 900;
         margin: 0 auto;
-        font-size: 20px;
+        font-size: 30px;
+        border-bottom: 3px solid $grey1;
+        padding: $basic;
       }
 
       &-button{
-        background-color: $red;
+        background-color: $blue;
+        border: none;
+        border-radius: $basic;
+        color: $white;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all .2s ease-in;
+        margin-top: $basic;
+
+        &-link{
+          color: $white;
+          text-decoration: none;
+          padding: 2px;
+
+          &:hover{
+            color:unset;
+          }
+        }
+
+        &:hover{
+          background-color: $red;
+        }
       }
 
       &-link{
         text-decoration: none;
         color: $white;
-        font-weight: bold;
-        margin-left: 30px;
+        font-weight: 500;
+        padding:$basic;
+        transition: all .2s ease-in-out;
 
         &:hover{
           color: $red;
+          transform: scale(1.02);
         }
       }
     }
@@ -128,31 +164,41 @@ iframe{
 
   &__menu--show{
     height: 100%;
-    background-color: $blue;
-    border-bottom: 6px solid $grey3;
+    background-color: $grey3;
     box-shadow: $box-shadow;
     position: absolute;
     content-visibility: visible;
     border-left: 4px solid $grey3;
-    width: 300px;
+    width: 100%;
   }
 
   &__menu--hidden{
     height: 100%;
     width: 0;
-    background-color: $red;
+    background-color: $blue;
     content-visibility: hidden;
   }
 }
 //========FOOTER========\\
 .footer{
   @include flex (center, center, column);
-  position: absolute;
-  bottom: 0;
-  background-color: $grey3;
   width: 100%;
   color: $white;
   border-radius: 50px 50px 0 0;
+  position: relative;
+  position:absolute; 
+  left:0px; 
+  right:0px; 
+  bottom: 0;
+  z-index:0;
+  border-bottom: 5px solid $blue;
+
+  &__icon{
+    width: 50px;
+    height: 50px;
+    color: $blue;
+    cursor: pointer;
+  }
 
   &__img{
     height: 50px;

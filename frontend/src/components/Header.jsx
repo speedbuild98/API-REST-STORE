@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 
+import Footer from "./Footer"
+
 import Logo from '../assets/Logo.png'
-import Menu from '@iconscout/react-unicons/icons/uil-ellipsis-h'
+import Menu from '@iconscout/react-unicons/icons/uil-ellipsis-v'
+import Plus from '@iconscout/react-unicons/icons/uil-plus-circle'
+
 
 
 const Header = () => {
@@ -12,7 +16,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <nav className="header__nav">
+      <nav className={!nav ? "header__nav header__nav--open" : "header__nav header__nav--closed"}>
         <a className="header__nav-title" href="http://localhost:3000/">
           <img className="header__nav-img" src={Logo} alt="Logo SumTech Labs" />
         </a>
@@ -40,11 +44,12 @@ const Header = () => {
           }
         >
               <span className='header__menu__content-title'>Store Managment System</span>
-              <Link className='header__menu__content-link' to="/">Dashboard</Link>
-              <Link className='header__menu__content-link' to="/customers">Customers</Link>
-              <Link className='header__menu__content-link' to="/products">Products</Link>
-              <Link className='header__menu__content-link' to="/operations">Operations</Link>
-              <button className='header__menu__content-button'>Add Operation</button>
+              <Link onClick={handleClick} className='header__menu__content-link' to="/">Dashboard</Link>
+              <Link onClick={handleClick} className='header__menu__content-link' to="/customers">Customers</Link>
+              <Link onClick={handleClick} className='header__menu__content-link' to="/products">Products</Link>
+              <Link onClick={handleClick} className='header__menu__content-link' to="/operations">Operations</Link>
+              <button onClick={handleClick} className='header__menu__content-button'><Plus /><Link className='header__menu__content-button-link' to="/add-operation">Add operation</Link></button>
+              <Footer />
         </div>
       </div>
     </header>

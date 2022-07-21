@@ -44,7 +44,7 @@ const OperationsList = () => {
                   <th> Date </th>                
                   <th> Customer First Name </th>
                   <th> Customer Last Name </th>
-                  <th> Products </th>
+                  <th> Product </th>
                   <th> Quantity </th>
                   <th> Total </th>
                   <th> Actions </th>
@@ -61,7 +61,7 @@ const OperationsList = () => {
                               <td> {operation.lastNameCustomer} </td>
                               <td> {operation.products} </td>
                               <td> {operation.quantity} </td>
-                              <td> {operation.total} </td>
+                              <td> ${operation.total} </td>
                               <td>
                                     <Link className="btn btn-info text-white" to={`/edit-operation/${operation.id}`} >Update</Link>
                                     <button className = "btn btn-danger" onClick = {() => deleteOperation(operation.id)}
