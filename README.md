@@ -19,6 +19,7 @@ Mi primera API REST CRUD coded en Java con el framework Spring y MySQL como data
 - [ ] Databases for different users
 - [ ] Alerts on save, delete or update functions
 - [ ] Relational tables on MySQL
+- [ ] Products with images
 
 
 
