@@ -21,6 +21,7 @@ Mi primera API REST CRUD coded en Java con el framework Spring y MySQL como data
 - [ ] Relational tables on MySQL
 - [ ] Products with images
 - [ ] Add preload spinner
+- [ ] "lastname" => "lastName"
 
 
 
